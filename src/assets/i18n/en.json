@@ -1,0 +1,79 @@
+{
+  "BACK_BUTTON_TEXT": "Back",
+
+  "FIRSTNAME": "Name",
+  "LASTNAME": "Surname",
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "USERNAME": "Username",
+  "MSISDN": "Mobile",
+  "PASSWORD": "Password",
+  "LOGIN": "Sign in",
+  "SIGNUP": "Register",
+
+  "TAB1_TITLE": "Activations",
+  "TAB2_TITLE": "Progress",
+  "TAB3_TITLE": "About",
+
+  "MAP_TITLE": "Map",
+  "TUTORIAL_BUTTON": "View Tutorial",
+  "TUTORIAL_SKIP_BUTTON": "Skip",
+  "TUTORIAL_CONTINUE_BUTTON": "Get Started!",
+
+  "TUTORIAL_SLIDE1_TITLE": "Welcome to SA Home Loans <b>#MakingHomesReal!</b>",
+  "TUTORIAL_SLIDE1_DESCRIPTION": "Start building your house in augmented reality, the more pieces you collect at activations, the more chance you have of winning R100 000 in cash!",
+
+  "TUTORIAL_SLIDE2_TITLE": "How does the <br/>competition work?",
+  "TUTORIAL_SLIDE2_DESCRIPTION": "<span>All you need to do is visit our daily activations and open up this app.</span><span> Then scan the featured image to claim your piece of the SA Home Loans house</span>",
+
+  "TUTORIAL_SLIDE3_TITLE": "Each activation has a different piece of the house to collect",
+  "TUTORIAL_SLIDE3_DESCRIPTION": "Those who collect the most pieces will be asked to attend a final activation where <br/><b>R100 000</b> will be awarded to one lucky winner!",
+
+  "TUTORIAL_SLIDE4_TITLE": "Ready to start making your <br/>home real?",
+  "TUTORIAL_SLIDE4_DESCRIPTION": "Get started by finding out where today’s activation is taking place!",
+
+  "WELCOME_INTRO": "Sign in below to get closer to winning R100 000 from SA Home Loans towards making your home real!",
+
+  "SETTINGS_TITLE": "Settings",
+  "SETTINGS_OPTION1": "Option 1",
+  "SETTINGS_OPTION2": "Option 2",
+  "SETTINGS_OPTION3": "Option 3",
+  "SETTINGS_OPTION4": "Option 4",
+
+  "SETTINGS_PROFILE_BUTTON": "Edit Profile",
+
+  "SETTINGS_PAGE_PROFILE": "Edit Profile",
+
+  "WELCOME_TITLE": "Welcome",
+
+  "LOGIN_TITLE": "Sign in",
+  "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_BUTTON": "Sign in",
+  "SIGNUP_TITLE": "Register",
+  "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
+  "SIGNUP_BUTTON": "Sign up",
+  "LOGOUT_BUTTON": "Log Out",
+  "FEED_TITLE": "Progress",
+  "SCAN_BUTTON": "Scan",
+  "TERMS_BUTTON": "Terms & Conditions",
+  "TERMS_TITLE": "Terms & Conditions",
+
+  "ABOUT_TITLE": "About SA Home Loans",
+
+  "LIST_MASTER_TITLE": "Activations",
+
+  "ITEM_CREATE_TITLE": "New Item",
+  "ITEM_CREATE_CHOOSE_IMAGE": "Add Image",
+
+  "ITEM_NAME_PLACEHOLDER": "Name",
+  "ITEM_ABOUT_PLACEHOLDER": "About",
+
+  "DONE_BUTTON": "Done",
+  "CANCEL_BUTTON": "Cancel",
+  "DELETE_BUTTON": "Delete",
+
+  "CARDS_TITLE": "Social",
+
+  "SEARCH_TITLE": "Search",
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+}

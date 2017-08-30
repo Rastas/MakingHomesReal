@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'ABOUT_TITLE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()" color="primary"><ion-icon name="log-out"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+
+  <h2 class="content-title">HOW IT WORKS</h2>
+  <p>Over the period of 4th September to the 25th September you have the chance to WIN R100 000 and amazing spot prizes with
+    <b>SA Home Loans</b> by collecting virtual pieces of a house to make your home a REALITY!
+    <br/>Those who collect the most pieces will go into the final draw!</p>
+
+  <div padding>
+    <button ion-button color="primary" block type="button" (click)="tutorial()">{{ 'TUTORIAL_BUTTON' | translate }}</button>
+  </div>
+
+  <div padding>
+    <button ion-button color="primary" block type="button" (click)="terms()">{{ 'TERMS_BUTTON' | translate }}</button>
+  </div>
+</ion-content>

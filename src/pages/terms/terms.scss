@@ -1,0 +1,24 @@
+page-terms {
+  .content-title {
+    margin-top: 2.8rem;
+    padding: 20px;
+    color: map-get( $colors, secondary);
+    text-align: center;
+  }
+  b {
+    font-weight: 500;
+  }
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #FFFFFF;
+    b {
+      color: map-get( $colors, secondary);
+    }
+  }
+  
+  li{
+    padding: 10px;
+  }
+}

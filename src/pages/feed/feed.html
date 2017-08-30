@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ 'FEED_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of currentItems">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="item.Thumbnail">
+      </ion-avatar>
+      <h2 [innerHTML]="item.HeadLine"></h2>
+      <p [innerHTML]="item.TagLine"></p>
+    </ion-item>
+
+    <img [src]="item.FocusGraphic">
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "Making Homes Real",
+  "app_id": "c075cc5d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

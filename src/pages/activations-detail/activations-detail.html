@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ currentItem.HeadLine }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card *ngIf="!currentItem.IsComplete">
+    <ion-card-content>
+      <img [src]="currentItem.Thumbnail">
+      <p>&nbsp;</p>
+      <button ion-button color="primary" type="submit" (click)="startScan()" block padding>{{ currentItem.ButtonCTA }}</button>
+      <p>&nbsp;</p>
+      <div [innerHTML]="currentItem.LongInstructions"></div>
+      <p>&nbsp;</p>
+      <div #map id="map" style="min-height:100px;" padding></div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="currentItem.IsComplete">
+    <ion-card-content>
+      <img [src]="currentItem.FocusGraphic">
+      <p>&nbsp;</p>
+      <div [innerHTML]="currentItem.ResultSuccessContent"></div>
+    </ion-card-content>
+  </ion-card>
+
+
+
+
+</ion-content>

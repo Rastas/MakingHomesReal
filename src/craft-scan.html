@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="cordova.js"></script>		
+        <script>   
+  
+            var selectedImageId;
+
+                function onError(error) {
+                    // Ignore search errors in finder mode
+                }
+
+
+                function getResults(results) {
+                    if(results.length > 0) {
+                        var item = results[0].item;
+                        if (item.isAR) {
+                            CraftARTracking.addItem(item, function(){
+                                processingResults = false;
+                                CraftARTracking.startTracking();
+                            },function(err) {
+                                console.log("Error adding AR item: " + err.errorMessage);
+                                processingResults = false;
+                                CraftARSDK.startFinder();
+                            });
+                        } else {
+                            //Finder finish on searchresults > 0
+                            CraftARSDK.startFinder();
+                        }
+                    }
+                }                   
+
+                function didStartCapture() {
+                    CraftARSDK.searchController = CraftARCloudRecognition.searchController;
+                    CraftARCloudRecognition.onSearchResults(getResults);
+                    CraftARCloudRecognition.onSearchError(onError);
+
+                    CraftARCloudRecognition.setCollectionWithToken("37c615870cee4e36", function() {
+                        CraftARSDK.startFinder();
+
+                    }, function(error) {
+                        console.log("Error:" + error.errorMessage);
+                    });
+                }
+
+
+
+                function didGetTouchEvent(touch) {
+                    window.localStorage.setItem('ImageId', selectedImageId);
+                    CraftARSDK.closeView();
+                }
+
+                function didStartTrackingItem(item) {
+                    selectedImageId = item.uuid;
+                }
+
+
+                function didStopTrackingItem(item) {
+                    selectedImageId = '';
+                }
+
+
+                function didTrackingTimeout() {
+                    selectedImageId = '';
+                }
+
+                function startCraftAR() 
+                {
+                   CraftARTouch.onTouchEvent(didGetTouchEvent);
+
+                   CraftARTracking.onStartTracking(didStartTrackingItem);  
+                   CraftARTracking.onStopTracking(didStopTrackingItem);
+                   CraftARTracking.onTrackingTimeOut(didTrackingTimeout);
+
+                   CraftARSDK.onStartCapture(didStartCapture); 
+                   CraftARSDK.startCapture();
+                }
+
+                document.addEventListener("deviceready", function() {
+                    selectedImageId = '';
+                    startCraftAR();
+                }, false);
+                
+        </script>
+        
+    </head>
+    <body>
+    </body>
+</html>
