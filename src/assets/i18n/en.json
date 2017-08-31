@@ -6,7 +6,7 @@
   "NAME": "Name",
   "EMAIL": "Email",
   "USERNAME": "Username",
-  "MSISDN": "Mobile",
+  "MSISDN": "Mobile Number",
   "PASSWORD": "Password",
   "LOGIN": "Sign in",
   "SIGNUP": "Register",

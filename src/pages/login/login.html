@@ -16,9 +16,9 @@
   <form [formGroup]="LoginForm" (ngSubmit)="login()">
     <ion-list no-lines>
 
-      <ion-item>
-        <ion-label fixed>{{ 'MSISDN' | translate }}</ion-label>
-        <ion-input formControlName="username" type="number" name="username"></ion-input>
+      <ion-item padding>
+        <ion-label>     <ion-icon name="call"></ion-icon> {{ 'MSISDN' | translate }}</ion-label>
+        <ion-input formControlName="username" type="number" placeholder="eg. 079XXXXXXX" name="username" style="border: 1px solid white;"></ion-input>
       </ion-item>
       <p ion-text [hidden]="LoginForm.controls.username.valid || submitAttempt == false" color="danger" padding-left>
         Please enter a valid mobile number
