@@ -76,29 +76,16 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone_640x960.png" width="640" />
         <splash height="768" src="resources/ios/splash/Default~ipad.png" width="320" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
-        <icon height="120" src="resources/ios/icon/icon-40@3x.png" width="120" />
-        <icon height="167" src="resources/ios/icon/icon-83.5@2x.png" width="167" />
-        <splash height="1136" src="resources/ios/splash/Default-568h@2x~iphone.png" width="640" />
-        <splash height="1334" src="resources/ios/splash/Default-667h.png" width="750" />
-        <splash height="2208" src="resources/ios/splash/Default-736h.png" width="1242" />
-        <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
-        <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
-        <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
-        <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
-        <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
-        <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
-        <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
-        <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
     </platform>
     <allow-navigation href="http://192.168.0.10:8100" />
     <allow-navigation href="http://10.187.55.95:8100" />
     <engine name="android" spec="^6.2.3" />
-    <plugin name="cordova-plugin-console" spec="^1.0.5" />
-    <plugin name="cordova-plugin-device" spec="^1.1.4" />
+    <engine name="ios" spec="^4.4.0" />
+    <plugin name="com.catchoom.craftar" spec="file:custom-plugins\craftar-cordova-plugin" />
+    <plugin name="cordova-plugin-console" spec="^1.0.7" />
+    <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
-    <plugin name="cordova-plugin-statusbar" spec="2.2.2" />
-    <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
-    <plugin name="com.catchoom.craftar" spec="custom-plugins/craftar-cordova-plugin" />
-    <engine name="ios" spec="~4.4.0" />
 </widget>
