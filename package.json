@@ -34,7 +34,7 @@
         "@ngx-translate/http-loader": "0.0.3",
         "@types/google-maps": "^3.2.0",
         "angular2-text-mask": "^8.0.3",
-        "com.catchoom.craftar": "file:custom-plugins\\craftar-cordova-plugin",
+        "com.catchoom.craftar": "file:../custom-plugins/craftar-cordova-plugin",
         "cordova-android": "^6.2.3",
         "cordova-ios": "^4.4.0",
         "cordova-plugin-console": "^1.0.7",
