@@ -1,91 +1,120 @@
 <html>
-    <head>
-        <meta charset="utf-8" />
-        
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script src="cordova.js"></script>		
-        <script>   
-  
-            var selectedImageId;
 
-                function onError(error) {
-                    // Ignore search errors in finder mode
-                }
+<head>
+  <meta charset="utf-8" />
 
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="cordova.js"></script>
+  <style type="text/css">
+    .overlay {
+      background-color: #ECECEC;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: fixed;
+      height: 120px;
+      text-align: center;
+    }
 
-                function getResults(results) {
-                    if(results.length > 0) {
-                        var item = results[0].item;
-                        if (item.isAR) {
-                            CraftARTracking.addItem(item, function(){
-                                processingResults = false;
-                                CraftARTracking.startTracking();
-                            },function(err) {
-                                console.log("Error adding AR item: " + err.errorMessage);
-                                processingResults = false;
-                                CraftARSDK.startFinder();
-                            });
-                        } else {
-                            //Finder finish on searchresults > 0
-                            CraftARSDK.startFinder();
-                        }
-                    }
-                }                   
+    #close-button {
+      text-align: center;
+      vertical-align: middle;
+      position: relative;
+      line-height: 40px;
+    }
 
-                function didStartCapture() {
-                    CraftARSDK.searchController = CraftARCloudRecognition.searchController;
-                    CraftARCloudRecognition.onSearchResults(getResults);
-                    CraftARCloudRecognition.onSearchError(onError);
+  </style>
+  <script>
+    var selectedImageId;
 
-                    CraftARCloudRecognition.setCollectionWithToken("37c615870cee4e36", function() {
-                        CraftARSDK.startFinder();
-
-                    }, function(error) {
-                        console.log("Error:" + error.errorMessage);
-                    });
-                }
+    function onError(error) {
+      // Ignore search errors in finder mode
+    }
 
 
+    function getResults(results) {
+      if (results.length > 0) {
+        var item = results[0].item;
+        if (item.isAR) {
+          CraftARTracking.addItem(item, function () {
+            processingResults = false;
+            CraftARTracking.startTracking();
+          }, function (err) {
+            console.log("Error adding AR item: " + err.errorMessage);
+            processingResults = false;
+            CraftARSDK.startFinder();
+          });
+        } else {
+          //Finder finish on searchresults > 0
+          CraftARSDK.startFinder();
+        }
+      }
+    }
 
-                function didGetTouchEvent(touch) {
-                    window.localStorage.setItem('ImageId', selectedImageId);
-                    CraftARSDK.closeView();
-                }
+    function didStartCapture() {
+      CraftARSDK.searchController = CraftARCloudRecognition.searchController;
+      CraftARCloudRecognition.onSearchResults(getResults);
+      CraftARCloudRecognition.onSearchError(onError);
 
-                function didStartTrackingItem(item) {
-                    selectedImageId = item.uuid;
-                }
+      CraftARCloudRecognition.setCollectionWithToken("37c615870cee4e36", function () {
+        CraftARSDK.startFinder();
+
+      }, function (error) {
+        console.log("Error:" + error.errorMessage);
+      });
+    }
 
 
-                function didStopTrackingItem(item) {
-                    selectedImageId = '';
-                }
+
+    function didGetTouchEvent(touch) {
+      window.localStorage.setItem('ImageId', selectedImageId);
+      CraftARSDK.closeView(null, null);
+    }
+
+    function didStartTrackingItem(item) {
+      selectedImageId = item.uuid;
+    }
 
 
-                function didTrackingTimeout() {
-                    selectedImageId = '';
-                }
+    function didStopTrackingItem(item) {
+      selectedImageId = '';
+    }
 
-                function startCraftAR() 
-                {
-                   CraftARTouch.onTouchEvent(didGetTouchEvent);
+    function close() {
+      selectedImageId = '';
+      CraftARSDK.closeView(null, null);
+    }
 
-                   CraftARTracking.onStartTracking(didStartTrackingItem);  
-                   CraftARTracking.onStopTracking(didStopTrackingItem);
-                   CraftARTracking.onTrackingTimeOut(didTrackingTimeout);
+    function didTrackingTimeout() {
+      selectedImageId = '';
+    }
 
-                   CraftARSDK.onStartCapture(didStartCapture); 
-                   CraftARSDK.startCapture();
-                }
+    function startCraftAR() {
+      CraftARTouch.onTouchEvent(didGetTouchEvent);
 
-                document.addEventListener("deviceready", function() {
-                    selectedImageId = '';
-                    startCraftAR();
-                }, false);
-                
-        </script>
-        
-    </head>
-    <body>
-    </body>
+      CraftARTracking.onStartTracking(didStartTrackingItem);
+      CraftARTracking.onStopTracking(didStopTrackingItem);
+      CraftARTracking.onTrackingTimeOut(didTrackingTimeout);
+
+      CraftARSDK.onStartCapture(didStartCapture);
+      CraftARSDK.startCapture();
+    }
+
+    document.addEventListener("deviceready", function () {
+      selectedImageId = '';
+      startCraftAR();
+    }, false);
+
+  </script>
+
+</head>
+
+<body>
+  <div class="overlay">
+    <a id="close-button" href="javascript:close();">
+            <img class="icon ion-home" src="assets/img/shutterButton.png" onclick="close()" alt="" style="height:100%;z-index:1000;"/>
+        </a>
+  </div>
+</body>
+
 </html>
